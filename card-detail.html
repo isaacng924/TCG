@@ -1,0 +1,43 @@
+<!-- card-detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="card-detail.js" defer></script>
+</head>
+<body>
+    <div class="card-detail-container">
+        <img id="card-image" src="" alt="Card Image">
+        <h2 id="card-name">Card Name</h2>
+        <p id="card-details">Details about the card...</p>
+    </div>
+
+    <script>
+        // Extract the card ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const cardId = urlParams.get('id');
+
+        // Function to fetch card details (mock data for now)
+        function fetchCardDetails(id) {
+            // Mock data; replace this with actual data fetching
+            const cardData = {
+                id: id,
+                name: "Sample Card",
+                image: "path-to-card-image.jpg",
+                details: "This is a sample description of the card."
+            };
+
+            // Populate the page with card details
+            document.getElementById('card-image').src = cardData.image;
+            document.getElementById('card-name').textContent = cardData.name;
+            document.getElementById('card-details').textContent = cardData.details;
+        }
+
+        // Fetch and display the card data
+        fetchCardDetails(cardId);
+    </script>
+</body>
+</html>
