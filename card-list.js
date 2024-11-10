@@ -2,12 +2,15 @@ const apiKey = 'bba20bca-f035-46ec-babe-eb0eb10d847c';  // Replace with your act
 const pageSize = 20;
 let currentPage = 1;
 let selectedSupertype = "";
+let selectedType = "";
 
 const cardContainer = document.querySelector('.card-list-container');
 const paginationControls = document.querySelector('.pagination-controls');
 const supertypeFilter = document.getElementById('supertype-filter');
 const searchInput = document.getElementById('search-input'); // Search input field
 const searchButton = document.getElementById('search-button'); // Search button
+window.filterByType = filterByType;
+window.clearFilters = clearFilters;
 
 // Fetch cards and render for a given page
 function fetchAndDisplayCards(page) {
@@ -24,6 +27,10 @@ function fetchAndDisplayCards(page) {
     // Add name search if input is provided
     if (searchQuery) {
         query += (supertype ? ` AND ` : `&q=`) + `name:${searchQuery}`;
+    }
+
+    if (selectedType) {
+        query += `${supertype ? ' AND ' : '&q='}types:${selectedType}`;
     }
 
     fetch(`https://api.pokemontcg.io/v2/cards${query}`, {
@@ -89,6 +96,18 @@ function changePage(page) {
 // Display card detail page
 function goToCardDetail(cardId) {
     window.location.href = `card-detail.html?id=${cardId}`;
+}
+function filterByType(type) {
+    selectedType = type;
+    currentPage = 1; // Reset to the first page
+    fetchAndDisplayCards(currentPage);
+}
+function clearFilters() {
+    selectedSupertype = "";
+    selectedType = "";
+    document.getElementById('supertype-filter').value = ""; // Reset supertype dropdown
+    currentPage = 1; // Reset to the first page
+    fetchAndDisplayCards(currentPage); // Fetch and display all cards
 }
 
 // Event listener for supertype filter change

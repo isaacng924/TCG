@@ -13,7 +13,9 @@
      
     <div class="top-bar">
         <div class="back-icon">
-            <a href="index.html">&#8592; Back</a>
+            <a href="index.html">
+                <img src="unopen.jpg" class="pokeballicon">
+            </a>
         </div>
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Search for cards by name...">
@@ -30,6 +32,23 @@
             <option value="Trainer">Trainer</option>
             <option value="Energy">Energy</option>
         </select>
+        <div class="filter-by-type">
+            <div class="type-buttons">
+                <button onclick="filterByType('Grass')">Grass</button>
+                <button onclick="filterByType('Fire')">Fire</button>
+                <button onclick="filterByType('Water')">Water</button>
+                <button onclick="filterByType('Lightning')">Lightning</button>
+                <button onclick="filterByType('Psychic')">Psychic</button>
+                <button onclick="filterByType('Fighting')">Fighting</button>
+                <button onclick="filterByType('Darkness')">Darkness</button>
+                <button onclick="filterByType('Metal')">Metal</button>
+                <button onclick="filterByType('Fairy')">Fairy</button>
+                <button onclick="filterByType('Dragon')">Dragon</button>
+                <button onclick="filterByType('Colorless')">Colorless</button>
+                <button onclick="clearFilters()">Clear Filter</button> <!-- Clear Filter button -->
+            </div>
+        </div>
+        
     </div>
 
     <!-- Container for card list and pagination controls -->
