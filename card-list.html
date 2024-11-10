@@ -7,20 +7,33 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/pokemontcgsdk"></script>
     <script src="card-list.js" type="module"></script>
-
 </head>
 <body>
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search for cards...">
-        <button id="search-button">Search</button>
+    <!-- Top bar with search box and button -->
+     
+    <div class="top-bar">
+        <div class="back-icon">
+            <a href="index.html">&#8592; Back</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for cards by name...">
+            <button id="search-button">Search</button>
+        </div>
     </div>
 
-    <div class="card-list-container">
-        <!-- Cards will be populated here by JavaScript -->
+    <!-- Filter section with label and dropdown -->
+    <div class="filter-section">
+        <span>Filter by:</span>
+        <select id="supertype-filter">
+            <option value="">All Supertypes</option>
+            <option value="Pokémon">Pokémon</option>
+            <option value="Trainer">Trainer</option>
+            <option value="Energy">Energy</option>
+        </select>
     </div>
 
-    <div class="pagination-controls">
-        <!-- Pagination buttons will be populated here by JavaScript -->
-    </div>
+    <!-- Container for card list and pagination controls -->
+    <div class="card-list-container"></div>
+    <div class="pagination-controls"></div>
 </body>
 </html>

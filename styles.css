@@ -1,4 +1,12 @@
 /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .home-container {
     display: flex;
     justify-content: center;
@@ -21,7 +29,97 @@ button:hover {
     background-color: #357ae8;
 }
 /* styles.css (additions for the card list) */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    width: 100%;
+}
+.back-icon {
+    font-size: 20px;
+}
 
+.back-icon a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Search container (search input and button) */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+}
+
+#search-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+    color: #4CAF50;
+    border: none;
+    margin-left: 10px;
+}
+
+/* Filter section styling */
+.filter-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.filter-section span {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.filter-section select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Card container styling */
+.card-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    padding: 10px;
+    max-width: 95%;
+}
+
+.card {
+    width: 250px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%; /* Set the desired width */
+    height: 100%; /* Set the desired height */
+    object-fit: fill; /* Ensures the image fits within the specified size without distortion */
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    font-size: 18px;
+}
 
 /* styles.css (additions for the card detail page) */
 .card-detail-container {
